@@ -129,7 +129,7 @@ class VLSIter(BaseEstimator, TransformerMixin):
         weight_history = []
 
         # init for vls
-        num_features = self.size_feature_subset
+        num_features = min(self.size_feature_subset, total_num_features)
 
         # Iterate till max iteration reached or all weights are really tiny
         while ((iteration < self.max_iter)):
